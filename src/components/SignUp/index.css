@@ -1,0 +1,45 @@
+.signup__outer__wrapper{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.signup__inner__wrapper{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    border: 2px solid black;
+}
+
+.signup__form__wrapper{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.signup__image__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.signup_email, .signup_password{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.signup_buttons{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
