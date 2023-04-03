@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SignUpImage from "../../assets/SignUp.png";
 import "./index.css";
 import { Button, TextField } from "@mui/material";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import CircleAccess from "../CircleAccess";
 
 const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [circleButton, setCircleButton] = useState("")
 	const navigate = useNavigate();
 
 	const auth = getAuth();
+
+	// const circleButton = async  () => {
+		
+	// 	console.log(res)
+	// 	let res = await window.Circle.getLoginButton();
+	// 	t
+	// 	return res
+	// }
+
+	useEffect(() => {
+		let res = window.Circle.getLoginButton();
+		setCircleButton(res);
+	})
 
 	const signUp = () => {
 		createUserWithEmailAndPassword(auth, email, password)
@@ -31,6 +46,20 @@ const SignUp = () => {
 		setEmail("");
 		setPassword("");
 	};
+
+	function circleButtonClicked() {
+		callJsLoginBtn();
+	}
+
+	async function callJsLoginBtn() {
+		try {
+			const jsLogin = await window.Circle.tryToLoginWithCircle(
+				"https://circleauth.gocircle.ai/login/appNixWTvaUWuatSWAMqtB5kJWDMtFVeHmvc"
+			);
+		} catch (e) {
+			alert("error found when trying to login with Circle");
+		}
+	}
 
 	return (
 		<div className="signup__outer__wrapper">
@@ -65,6 +94,8 @@ const SignUp = () => {
 						<Button variant="outlined" onClick={() => navigate("/signin")}>
 							Login
 						</Button>
+						<CircleAccess/>	
+						
 					</div>
 				</div>
 				<div
