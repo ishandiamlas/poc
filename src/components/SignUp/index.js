@@ -10,13 +10,13 @@ import CircleAccess from "../CircleAccess";
 const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [circleButton, setCircleButton] = useState("")
+	const [circleButton, setCircleButton] = useState("");
 	const navigate = useNavigate();
 
 	const auth = getAuth();
 
 	// const circleButton = async  () => {
-		
+
 	// 	console.log(res)
 	// 	let res = await window.Circle.getLoginButton();
 	// 	t
@@ -26,7 +26,7 @@ const SignUp = () => {
 	useEffect(() => {
 		let res = window.Circle.getLoginButton();
 		setCircleButton(res);
-	})
+	});
 
 	const signUp = () => {
 		createUserWithEmailAndPassword(auth, email, password)
@@ -94,16 +94,15 @@ const SignUp = () => {
 						<Button variant="outlined" onClick={() => navigate("/signin")}>
 							Login
 						</Button>
-						<CircleAccess/>	
-						
+					</div>
+					<div style={{ margin: "20px auto" }}>
+						<CircleAccess />
 					</div>
 				</div>
 				<div
 					className="signup__image__wrapper"
 					style={{ backgroundImage: `url(${SignUpImage})` }}
-				>
-					{/* <img src={SignUpImage} /> */}
-				</div>
+				></div>
 			</div>
 		</div>
 	);

@@ -37,7 +37,6 @@ const top100Films = [
 // );
 
 const ProfileDetails = () => {
-	// const styles = useStyles();
 	const [state, setState] = React.useState({
 		firstName: "",
 		lastName: "",
@@ -57,7 +56,7 @@ const ProfileDetails = () => {
 				alignItems: "center",
 				justifyContent: "center",
 				position: "relative",
-				// background: "red",
+				background: "linear-gradient(25deg, #676b6f 0%, #ffffff 100%)",
 			}}
 		>
 			<h1>Provide your details</h1>
@@ -73,7 +72,6 @@ const ProfileDetails = () => {
 					width: "60%",
 					margin: "10px auto",
 					backgroundColor: "white",
-					// border: "2px solid black",
 					borderRadius: "10px",
 					boxShadow: "0 0 8px gray",
 					padding: "100px",
@@ -127,7 +125,6 @@ const ProfileDetails = () => {
 					// 	);
 					// }}
 					renderInput={(params) => <TextField {...params} label="Department" />}
-					// onInputChange={(e) => console.log(e.target.value)}
 					onInputChange={(event, newInputValue) => {
 						console.log(newInputValue, event);
 					}}
@@ -138,6 +135,7 @@ const ProfileDetails = () => {
 					label="Your Email"
 					variant="outlined"
 					value={state.email}
+					autoComplete="off"
 					onChange={(e) => setState({ ...state, email: e.target.value })}
 				/>
 				<TextField
@@ -178,6 +176,7 @@ const ProfileDetails = () => {
 					Continue to Payment
 				</Button>
 			</Box>
+			<Box sx={{ height: "100px" }}></Box>
 		</div>
 	);
 };
