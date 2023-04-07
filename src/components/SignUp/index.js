@@ -76,7 +76,7 @@ const SignUp = () => {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
-					<div className="signup_password">
+					{/* <div className="signup_password">
 						<TextField
 							name="password"
 							value={password}
@@ -86,15 +86,15 @@ const SignUp = () => {
 							size="small"
 							onChange={(e) => setPassword(e.target.value)}
 						/>
-					</div>
-					<div className="signup_buttons">
+					</div> */}
+					{/* <div className="signup_buttons">
 						<Button variant="contained" onClick={() => signUp()}>
 							Sign Up
 						</Button>
 						<Button variant="outlined" onClick={() => navigate("/signin")}>
 							Login
 						</Button>
-					</div>
+					</div> */}
 					<div style={{ margin: "20px auto" }}>
 						<CircleAccess />
 					</div>

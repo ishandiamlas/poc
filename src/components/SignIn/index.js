@@ -5,6 +5,7 @@ import { Button, TextField } from "@mui/material";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import CircleAccess from "../CircleAccess";
 
 const SignUp = () => {
 	const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ const SignUp = () => {
 			<div className="signup__inner__wrapper">
 				<div className="signup__form__wrapper">
 					<h1>Welcome</h1>
-					<div className="signup_email">
+					{/* <div className="signup_email">
 						<TextField
 							name="email"
 							placeholder="E-mail Address"
@@ -57,14 +58,17 @@ const SignUp = () => {
 							size="small"
 							onChange={(e) => setPassword(e.target.value)}
 						/>
-					</div>
-					<div className="signup_buttons">
+					</div> */}
+					{/* <div className="signup_buttons">
 						<Button variant="contained" onClick={() => signUp()}>
 							Login
 						</Button>
 						<Button variant="outlined" onClick={() => navigate("/signup")}>
 							Sign Up
 						</Button>
+					</div> */}
+					<div style={{ margin: "20px auto" }}>
+						<CircleAccess />
 					</div>
 				</div>
 				<div
