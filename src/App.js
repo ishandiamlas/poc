@@ -6,6 +6,7 @@ import OverView from "./dashboard/SuperAdminPanelOverView";
 import SuperAdmilPanel from "./dashboard/SuperAdminPanel";
 import ProfileDetails from "./components/ProfileDetails";
 import ProductForm from "./components/ProductForm";
+import CircleAccessReturn from "./components/CircleAccessReturn";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route path="/superadmin" element={<SuperAdmilPanel />} />
 					<Route path="/profile-details" element={<ProfileDetails />} />
 					<Route path="/product-form" element={<ProductForm />} />
+					<Route path="/return/url" element={<CircleAccessReturn/>}/>
 				</Routes>
 			</BrowserRouter>
 		</div>
