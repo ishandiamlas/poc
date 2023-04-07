@@ -138,7 +138,7 @@ const ProfileDetails = () => {
 					autoComplete="off"
 					onChange={(e) => setState({ ...state, email: e.target.value })}
 				/>
-				<TextField
+				{/* <TextField
 					sx={{ width: "100%", margin: "5px" }}
 					id="outlined-basic"
 					label="Password"
@@ -155,7 +155,7 @@ const ProfileDetails = () => {
 					variant="outlined"
 					value={state.cpassword}
 					onChange={(e) => setState({ ...state, cpassword: e.target.value })}
-				/>
+				/> */}
 				<Button
 					variant="contained"
 					color="success"

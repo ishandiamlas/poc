@@ -82,6 +82,7 @@ const ProductForm = () => {
 							boxShadow: "0 0 6px lightgray",
 							background: "#fefefe",
 							marginTop: "100px",
+							borderRadius: "10px",
 						}}
 					>
 						<h2>Submit your AI product for Data Visualisation</h2>
@@ -93,6 +94,7 @@ const ProductForm = () => {
 								margin: "0 auto",
 								alignItems: "center",
 								justifyContent: "space-between",
+								borderRadius: "10px",
 							}}
 						>
 							{/* <FormLabel> */}
@@ -307,6 +309,7 @@ const ProductForm = () => {
 							boxShadow: "0 0 6px lightgray",
 							background: "#fefefe",
 							marginTop: "100px",
+							borderRadius: "10px",
 						}}
 					>
 						<h2>Submit your AI product for Data Visualisation</h2>
@@ -318,6 +321,7 @@ const ProductForm = () => {
 								margin: "0 auto",
 								alignItems: "center",
 								justifyContent: "space-between",
+								borderRadius: "10px",
 							}}
 						>
 							<TextField
@@ -472,6 +476,7 @@ const ProductForm = () => {
 							boxShadow: "0 0 6px lightgray",
 							background: "#fefefe",
 							marginTop: "100px",
+							borderRadius: "10px",
 						}}
 					>
 						<h2>Submit your AI product for Data Visualisation</h2>
@@ -483,6 +488,7 @@ const ProductForm = () => {
 								margin: "0 auto",
 								alignItems: "center",
 								justifyContent: "space-between",
+								borderRadius: "10px",
 							}}
 						>
 							{/* <FormLabel> */}
@@ -645,6 +651,7 @@ const ProductForm = () => {
 							boxShadow: "0 0 6px lightgray",
 							background: "#fefefe",
 							marginTop: "100px",
+							borderRadius: "10px",
 						}}
 					>
 						<h2>Submit your AI product for Data Visualisation</h2>
@@ -656,6 +663,7 @@ const ProductForm = () => {
 								margin: "0 auto",
 								alignItems: "center",
 								justifyContent: "space-between",
+								borderRadius: "10px",
 							}}
 						>
 							{/* <FormLabel> */}
