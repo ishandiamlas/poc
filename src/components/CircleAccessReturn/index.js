@@ -11,7 +11,6 @@ const CircleAccessReturn = () => {
   useEffect(() => {
     const currentParams = Object.fromEntries([...searchParams]);
     console.log(currentParams); // get new values onchange
-    debugger
     if(currentParams.userID != null) {
         // TBD we have to verify email
         // Make network call to auth service in Go with provider request paramertes and verify email
