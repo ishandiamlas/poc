@@ -14,11 +14,9 @@ const CircleAccess = () => {
 		callJsLoginBtn();
 	};
 
-	const callJsLoginBtn = async () => {
+	const callJsLoginBtn = () => {
 		try {
-			const jsLogin = await window.Circle.tryToLoginWithCircle(
-				"https://circleauth.gocircle.ai/login/appPcAhvV97JLGg6CMXM6TCpmhyg3ZQKqrAP"
-			);
+			window.location.href = "https://circleaccess.circlesecurity.ai/login/appPcAhvV97JLGg6CMXM6TCpmhyg3ZQKqrAP"
 		} catch (e) {
 			alert("error found when trying to login with Circle");
 		}
