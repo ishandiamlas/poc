@@ -3,19 +3,20 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // import { createStyles, makeStyles } from "@mui/styles";
 
 const top100Films = [
-	{ label: "Operations", year: 1994 },
-	{ label: "Maintainence", year: 1972 },
-	{ label: "Safetyr: Part II", year: 1974 },
-	{ label: "Environmental", year: 2008 },
-	{ label: "Supply Chain Management", year: 1957 },
-	{ label: "IT", year: 1993 },
-	{ label: "Finance", year: 1994 },
-	{ label: "Marketing", year: 2003 },
-	{ label: "Security", year: 2003 },
-	{ label: "AI Digital Factory", year: 2003 },
+	{ label: "Operations", value: "operations" },
+	{ label: "Maintainence", value: "maintainence" },
+	{ label: "Environmental", value: "environmental" },
+	{ label: "Supply Chain Management", value: "supplychainmanagement" },
+	{ label: "IT", value: "it" },
+	{ label: "Finance", value: "finance" },
+	{ label: "Marketing", value: "marketing" },
+	{ label: "Security", value: "security" },
+	{ label: "AI Digital Factory", value: "aidigitalfactory" },
 ];
 
 // const useStyles = makeStyles(({
@@ -41,12 +42,22 @@ const ProfileDetails = () => {
 		firstName: "",
 		lastName: "",
 		role: "",
-		dept: "",
+		department: "",
 		email: "",
-		password: "",
-		cpassword: "",
+		// password: "",
+		// cpassword: "",
 	});
+	const navigate = useNavigate();
 
+	const submitRequest = (data) => {
+		axios
+			.post(`http://192.168.29.88:8080/v1/api/sign-up`, data)
+			.then((res) => {
+				console.log(res);
+				navigate("/overview");
+			})
+			.catch((e) => console.log(e));
+	};
 	return (
 		<div
 			style={{
@@ -92,6 +103,7 @@ const ProfileDetails = () => {
 						label="First Name"
 						variant="outlined"
 						value={state.firstName}
+						required="true"
 						onChange={(e) => setState({ ...state, firstName: e.target.value })}
 					/>
 					<TextField
@@ -100,6 +112,7 @@ const ProfileDetails = () => {
 						label="Last Name"
 						variant="outlined"
 						value={state.lastName}
+						required="true"
 						onChange={(e) => setState({ ...state, lastName: e.target.value })}
 					/>
 				</Box>
@@ -124,9 +137,13 @@ const ProfileDetails = () => {
 					// 		</span>
 					// 	);
 					// }}
+					onChange={(e, v) => {
+						console.log(v.value);
+						setState({ ...state, department: v.value });
+					}}
 					renderInput={(params) => <TextField {...params} label="Department" />}
 					onInputChange={(event, newInputValue) => {
-						console.log(newInputValue, event);
+						// console.log(newInputValue, event);
 					}}
 				/>
 				<TextField
@@ -162,14 +179,13 @@ const ProfileDetails = () => {
 					sx={{ marginTop: "10px", borderRadius: "20px" }}
 					onClick={() => {
 						console.log({ state });
+						submitRequest(state);
 						setState({
 							firstName: "",
 							lastName: "",
 							role: "",
 							dept: "",
 							email: "",
-							password: "",
-							cpassword: "",
 						});
 					}}
 				>
